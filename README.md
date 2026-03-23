@@ -116,7 +116,3 @@ curl "http://127.0.0.1:8000/api/recommend?occasion=Wedding&limit=8"
   ]
 }
 ```
-
-Current local result:
-
-- `Ran 7 tests ... OK`
