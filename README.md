@@ -117,12 +117,6 @@ curl "http://127.0.0.1:8000/api/recommend?occasion=Wedding&limit=8"
 }
 ```
 
-## Run Tests
-
-```bash
-python3 -m unittest discover -s tests
-```
-
 Current local result:
 
 - `Ran 7 tests ... OK`
