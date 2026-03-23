@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Occasion-Based Product Recommender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">AI/ML Take-Home Assignment</p>
+        <h1>Occasion-Based Product Recommendation System</h1>
+        <p class="lede">
+          Search a catalog of {{ catalog_size }} active products and surface the most relevant
+          gifts, hampers, accessories, and keepsakes for any occasion.
+        </p>
+
+        <form id="occasion-form" class="search-panel">
+          <label for="occasion-input">Enter an occasion</label>
+          <div class="search-row">
+            <input
+              id="occasion-input"
+              name="occasion"
+              type="text"
+              placeholder="Try Birthday, Wedding, Diwali, Office Party..."
+              autocomplete="off"
+            />
+            <button type="submit">Find Products</button>
+          </div>
+        </form>
+
+        <div class="chips">
+          {% for suggestion in suggestions %}
+          <button class="chip" type="button" data-occasion="{{ suggestion }}">{{ suggestion }}</button>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="results-shell">
+        <div class="results-header">
+          <div>
+            <p class="section-kicker">Recommendations</p>
+            <h2 id="results-title">Products will appear below</h2>
+          </div>
+          <p id="results-meta" class="results-meta">Use a common event or a custom occasion.</p>
+        </div>
+
+        <div id="status-message" class="status-message">
+          Enter an occasion to see ranked recommendations in this panel.
+        </div>
+
+        <div id="results-grid" class="results-grid" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <template id="product-card-template">
+      <article class="product-card">
+        <img class="product-image" alt="" loading="lazy" />
+        <div class="product-body">
+          <div class="product-meta">
+            <span class="category-pill"></span>
+            <span class="score-pill"></span>
+          </div>
+          <h3 class="product-title"></h3>
+          <p class="product-brand"></p>
+          <p class="product-description"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
