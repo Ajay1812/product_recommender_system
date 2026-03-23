@@ -2,6 +2,8 @@
 
 FastAPI application that recommends products from `products.json` for a user-provided occasion (for example, `Wedding`, `Diwali`, `Office Party`) and displays ranked results on the same page.
 
+<img width="1918" height="1080" alt="image" src="https://github.com/user-attachments/assets/72739dc2-c3b4-4c60-b6d3-1b6b0c38860f" />
+
 ## What It Does
 
 - Loads and normalizes product data from `products.json`
@@ -69,6 +71,11 @@ Main field mappings include:
 Category IDs are translated to readable labels using `CATEGORY_LABELS`.
 
 ## Setup
+
+```bash
+git clone https://github.com/Ajay1812/product_recommender_system.git
+cd product_recommender_system/
+```
 
 ```bash
 python3 -m venv .venv
